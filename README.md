@@ -8,7 +8,7 @@ None
 
 #### Variables
 
-None
+* `apt_file_update_daily` [default: `true`]: Whether or not to update on daily basis
 
 ## Dependencies
 
