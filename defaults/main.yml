@@ -1,0 +1,3 @@
+---
+# defaults file for apt-file
+apt_file_update_daily: true

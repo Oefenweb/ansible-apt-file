@@ -1,0 +1,17 @@
+---
+# tasks file for apt-file
+- name: install
+  apt:
+    name: apt-file
+    state: latest
+  tags: [configuration, apt-file, apt-file-install]
+
+- name: add (daily) cron task
+  cron:
+    name: "apt-file update"
+    job: "test -x /usr/bin/apt-file && /usr/bin/apt-file update"
+    special_time: daily
+    cron_file: apt-file
+    user: root
+  when: apt_file_update_daily
+  tags: [configuration, apt-file, apt-file-cron-d]
