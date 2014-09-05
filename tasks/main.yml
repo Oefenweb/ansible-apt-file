@@ -4,7 +4,13 @@
   apt:
     name: apt-file
     state: latest
+  register: result
   tags: [configuration, apt-file, apt-file-install]
+
+- name: run apt-file update (once)
+  shell: "test -x /usr/bin/apt-file && /usr/bin/apt-file update"
+  when: result|changed
+  tags: [configuration, apt-file, apt-file-update]
 
 - name: add (daily) cron task
   cron:
