@@ -1,4 +1,6 @@
-## apt-file [![Build Status](https://travis-ci.org/Oefenweb/ansible-apt-file.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-apt-file)
+## apt-file
+
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-apt-file.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-apt-file) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-apt--file-blue.svg)](https://galaxy.ansible.com/list#/roles/2304)
 
 Set up apt-file in Debian-like systems.
 
