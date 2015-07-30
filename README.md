@@ -22,7 +22,7 @@ None
 ---
 - hosts: all
   roles:
-  - apt-file
+    - apt-file
 ```
 
 #### License

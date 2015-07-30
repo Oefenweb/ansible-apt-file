@@ -1,9 +1,11 @@
----
 # tasks file for apt-file
+---
 - name: install
   apt:
     name: apt-file
     state: latest
+    update_cache: true
+    cache_valid_time: 3600
   register: result
   tags: [configuration, apt-file, apt-file-install]
 
