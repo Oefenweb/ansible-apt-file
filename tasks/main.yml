@@ -11,7 +11,7 @@
 
 - name: run apt-file update (once)
   shell: "test -x /usr/bin/apt-file && /usr/bin/apt-file update"
-  when: result|changed
+  when: result | changed
   tags: [configuration, apt-file, apt-file-update]
 
 - name: add (daily) cron task
