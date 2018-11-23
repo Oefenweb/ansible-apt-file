@@ -2,20 +2,20 @@
 ---
 - name: install
   apt:
-    name: "{{ item }}"
+    name: "{{ apt_file_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  register: result
-  with_items: "{{ apt_file_dependencies }}"
+  register: _result
   tags:
     - configuration
     - apt-file
     - apt-file-install
 
 - name: run apt-file update (once)
-  shell: test -x /usr/bin/apt-file && /usr/bin/apt-file update
-  when: result | changed
+  shell: >
+    test -x /usr/bin/apt-file && /usr/bin/apt-file update
+  when: _result is changed
   tags:
     - configuration
     - apt-file
