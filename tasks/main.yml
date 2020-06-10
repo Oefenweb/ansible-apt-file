@@ -13,8 +13,7 @@
     - apt-file-install
 
 - name: run apt-file update (once)
-  shell: >
-    test -x /usr/bin/apt-file && /usr/bin/apt-file update
+  shell: "{{ apt_file_update_job }}"
   when: _result is changed
   tags:
     - configuration
@@ -24,7 +23,7 @@
 - name: add (daily) cron task
   cron:
     name: "apt-file update"
-    job: "test -x /usr/bin/apt-file && /usr/bin/apt-file update"
+    job: "{{ apt_file_update_job }}"
     special_time: daily
     cron_file: apt-file
     user: root
