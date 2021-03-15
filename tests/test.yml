@@ -1,4 +1,4 @@
-# test file for apt-file
+# test file
 ---
 - hosts: localhost
   connection: local

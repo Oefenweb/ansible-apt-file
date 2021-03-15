@@ -1,4 +1,4 @@
-# vars file for apt-file
+# vars file
 ---
 apt_file_dependencies:
   - apt-file
