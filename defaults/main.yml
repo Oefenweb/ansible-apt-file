@@ -1,3 +1,5 @@
 # defaults file
 ---
 apt_file_update_daily: true
+apt_file_quiet: true
+apt_file_quietness: '&>'
