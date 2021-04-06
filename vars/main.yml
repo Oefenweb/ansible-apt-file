@@ -4,5 +4,5 @@ apt_file_dependencies:
   - apt-file
   - cron
 
-apt_file_update_job: >
+apt_file_update_job: >-
   test -x /usr/bin/apt-file && /usr/bin/apt-file update

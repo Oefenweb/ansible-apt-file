@@ -23,7 +23,7 @@
 - name: add (daily) cron task
   cron:
     name: "apt-file update"
-    job: "{{ apt_file_update_job }}"
+    job: "{{ apt_file_update_job }}{{ apt_file_quiet | ternary(' ' + apt_file_quietness + ' /dev/null', '') }}"
     special_time: daily
     cron_file: apt-file
     user: root
