@@ -13,7 +13,8 @@
     - apt-file-install
 
 - name: run apt-file update (once)
-  shell: "{{ apt_file_update_job }}"
+  shell: >
+    {{ apt_file_update_job }}
   when: _result is changed
   tags:
     - configuration
