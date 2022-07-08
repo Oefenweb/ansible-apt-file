@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: install
-  apt:
+  ansible.builtin.apt:
     name: "{{ apt_file_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
@@ -13,7 +13,7 @@
     - apt-file-install
 
 - name: run apt-file update (once)
-  shell: >
+  ansible.builtin.shell: >
     {{ apt_file_update_job }}
   when: _result is changed
   tags:
@@ -22,7 +22,7 @@
     - apt-file-update
 
 - name: add (daily) cron task
-  cron:
+  ansible.builtin.cron:
     name: "apt-file update"
     job: "{{ apt_file_update_job }}{{ apt_file_quiet | ternary(' ' + apt_file_quietness + ' /dev/null', '') }}"
     special_time: daily
