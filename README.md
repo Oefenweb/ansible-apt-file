@@ -26,7 +26,7 @@ None
 ---
 - hosts: all
   roles:
-    - apt-file
+    - oefenweb.apt-file
 ```
 
 #### License
