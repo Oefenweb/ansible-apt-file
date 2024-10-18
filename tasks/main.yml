@@ -12,10 +12,11 @@
     - apt-file
     - apt-file-install
 
-- name: run apt-file update (once)
+- name: run apt-file update (once)  # noqa no-changed-when
   ansible.builtin.shell: >
     {{ apt_file_update_job }}
   when: _result is changed
+  changed_when: true
   tags:
     - configuration
     - apt-file
