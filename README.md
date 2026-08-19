@@ -11,10 +11,10 @@ None
 
 #### Variables
 
-* `apt_file_quiet`: [default: `true`]: Whether or not the jobs should run quietly
+* `apt_file_quiet`: [default: `true`]: Whether the jobs should run quietly
 * `apt_file_quietness`: [default: `'&>'`]: Controls the "quietness" of the jobs (e.g. `'>'` for only `stderr`)
 
-* `apt_file_update_daily` [default: `true`]: Whether or not to update on daily basis
+* `apt_file_update_daily` [default: `true`]: Whether to update on daily basis
 
 ## Dependencies
 
